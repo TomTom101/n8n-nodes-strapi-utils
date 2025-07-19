@@ -4,7 +4,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 } from 'n8n-workflow';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+import { NodeOperationError } from 'n8n-workflow';
 
 export class StrapiUtils implements INodeType {
 	description: INodeTypeDescription = {
@@ -16,15 +16,9 @@ export class StrapiUtils implements INodeType {
 		defaults: {
 			name: 'Strapi Utils Node',
 		},
-		inputs: [NodeConnectionType.Main],
-		outputs: [NodeConnectionType.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		usableAsTool: true,
-		credentials: [
-			{
-				name: 'strapiApi',
-				required: false,
-			},
-		],
 		properties: [
 			// Node properties which the user gets displayed and
 			// can change on the node.
